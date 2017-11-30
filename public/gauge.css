@@ -38,6 +38,15 @@
   fill: #27ae60;
 }
 
+/* Medium */
+.metric.low path.data-arc {
+  stroke: #66b989;
+}
+
+.metric.low text {
+  fill: #37ae27;
+}
+
 /* Closed */
 .metric.closed path.data-arc {
   stroke: #14aecf;

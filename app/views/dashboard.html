@@ -12,4 +12,16 @@
 	</div>
 </div>
 
+<div class="dashboard__panel__high">
+           {{>gauge percentage=openIssuesHighCount class="high" title="High"}}
+</div>
+
+<div class="dashboard__panel__medium">
+  {{>gauge percentage=openIssuesMediumCount class="medium" title="Medium"}}
+</div>
+
+<div class="dashboard__panel__low">
+  {{>gauge percentage=openIssuesLowCount class="low" title="Low"}}
+</div>
+
 </section>

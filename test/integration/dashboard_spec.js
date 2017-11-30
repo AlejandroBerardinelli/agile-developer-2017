@@ -12,10 +12,24 @@ describe('Dashboard', function() {
     });
 
     cy.visit('/dashboard');
-
     cy.get('[data-test-open-issues]').should('contain', '2 open issues');
-    //cy.contains('2').should('exist');
-    //cy.contains('open issues').should('exist');
+    cy.dataTest('high-gauge')
+        .should('exist')
+        .should('contain', '100');
+
+            //add new issue
+    cy.dataTest('add-issue').click();
+    cy.field('title').type('New issue');
+    cy.field('description').type('New open issue description');
+    cy.field('severity').select('Medium');
+    cy.field('estimation').select('7');
+    cy.get('[type=submit]').click();
+
+
+    cy.visit('/dashboard');
+    cy.get('[data-test-open-issues]').should('contain', '3 open issues');
+    cy.dataTest('high-gauge')
+    .should('contain', '67');
     
  })
 });
